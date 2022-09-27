@@ -2,6 +2,7 @@
     max-width: 60rem;
     width: 90%;
     margin: 2rem auto;
+    /* background-color: #383838; */
     animation: meals-appear 1s ease-out forwards;
 }
 
