@@ -1,5 +1,5 @@
 
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Cart from './Components/Cart/Cart';
 import Header from './Components/Layout/Header';
@@ -15,9 +15,12 @@ function App() {
   const hideCartHandler =()=>{
     setCartShow(false);
   }
+  const checkoutHandler =() => {
+    alert("HI.....");
+  }
   return (
     <CartProvider>
-{cartShow && <Cart onHideCart={hideCartHandler}/>}
+{cartShow && <Cart onHideCart={hideCartHandler} onCheckout={checkoutHandler}/>}
       <div className='main-background'>
       
      <Header onShowCart={showCartHandler}/>
