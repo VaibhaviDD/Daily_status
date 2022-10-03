@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // import Home from '../Home/Home';
 import Modal from '../UI/Modal';
 import classes from './Checkout.module.css';
+import ContinueShop from './ContinueShop';
 
 const Checkout = (props) => {
     function refreshPage() {
@@ -20,20 +21,24 @@ const Checkout = (props) => {
       <div>
         Payment Method:
         <ul>
-            <li onClick={()=>alert('Hello....')}>COD</li>
-            <li onClick={()=>alert('Card Payment')}>Card Payment</li>
+            <li onClick={()=>navigate('/captcha')}>COD</li>
+            <li onClick={()=>navigate('/cardPay')}>Card Payment</li>
         </ul>
       </div>
-      <button className={classes.button}  onClick={confirmOrderHandler}>Confirm Order</button>
+      <button  className={classes.button}  onClick={confirmOrderHandler}>Confirm Order</button>
     </Modal>
 }
 {
-      isConfirmed && <Modal>
-        <div>Order is successfully ordered</div>
-        <button className={classes.button}
-        onClick={refreshPage}
-         >
-          Continue Shopping </button></Modal>
+      isConfirmed && <ContinueShop/>
+      //  <Modal>
+      //   <div>Order is successfully ordered</div>
+      //   <button className={classes.button}
+      //   // onClick={refreshPage}
+      //   onClick={()=> { 
+      //     navigate('/');
+      //   refreshPage()}}
+      //    >
+      //     Continue Shopping </button></Modal>
     }
     </>
   )
